@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Codeboard Online IDE</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.0-canary.14/tailwind.min.css"
+    integrity="sha512-zXhmHxwXn8kUvZApt3iuxFG7cAHa2wongnyRnq2uAxppI5t/J5pz7I0mrm409qZaAu4KLhRtFTaNhO86OWQv5A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <div class="grid grid-cols-1">
+
+
+    <div class=" divide-y-4 divide-gray-800 divide-dashed tracking-wider">
+      <div class="header m-6 lg:m-2 text-6xl lg:text-4xl text-gray-800 text-center"> Codeboard </div>
+
+
+      <div class="flex justify-between mx-10">
+        <div>
+          <div class="control-panel text-4xl lg:text-2xl float-left my-5 py-6 lg:px-4 lg:py-2">
+            Select Language:
+            &nbsp; &nbsp;
+            <select id="languages" class="languages p-1" onchange="changeLanguage()">
+              <option value="c"> C </option>
+              <option value="cpp"> C++ </option>
+              <option value="php"> PHP </option>
+              <option value="python"> Python </option>
+              <option value="node"> Node JS </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="button-container pr-5">
+          <button
+            class="btn self-center bg-green-300 float-right px-10 py-6 lg:px-4 lg:py-2 my-5 hover:bg-green-400 text-4xl lg:text-xl"
+            onclick="executeCode()"> Run
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="editor h-screen w-11/12 mx-auto text-5xl lg:text-2xl rounded-2xl" id="editor"></div>
+
+    <h1 class="m-10 lg:mx-16 lg:my-10 text-6xl lg:text-2xl tracking-wider">Output</h1>
+
+    <div class="w-11/12 mx-auto mb-10 text-6xl lg:text-2xl border-4 border-gray-300 rounded-3xl h-96">
+      <div class="output m-6 tracking-wider"></div>
+    </div>
+
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/lib/ace.js"></script>
+  <script src="js/lib/theme-monokai.js"></script>
+  <script src="js/ide.js"></script>
+
+</body>
+
+</html>
